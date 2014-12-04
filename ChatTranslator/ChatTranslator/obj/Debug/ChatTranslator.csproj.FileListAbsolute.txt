@@ -1,0 +1,11 @@
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\ChatTranslator.exe.config
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\ChatTranslator.exe
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\ChatTranslator.pdb
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\LeagueSharp.Common.dll
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\LeagueSharp.dll
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\SharpDX.dll
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\SharpDX.Direct3D9.dll
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\bin\Debug\LeagueSharp.xml
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\obj\Debug\ChatTranslator.csprojResolveAssemblyReference.cache
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\obj\Debug\ChatTranslator.exe
+D:\LeagueSharp\projects\ChatTranslator\ChatTranslator\obj\Debug\ChatTranslator.pdb
