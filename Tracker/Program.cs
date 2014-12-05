@@ -21,7 +21,7 @@ namespace Tracker
 
         static void Main(string[] args)
         {
-            Config = new Menu("Tracker", "Tracker", true);
+            Config = new Menu("CD/眼位计时器", "Tracker", true);
             HbTracker.AttachToMenu(Config);
             WardTracker.AttachToMenu(Config);
             GankAlerter.AttachToMenu(Config);

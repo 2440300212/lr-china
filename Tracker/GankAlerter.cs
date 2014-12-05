@@ -51,8 +51,8 @@ namespace Tracker
 
         public static void AttachToMenu(Menu menu)
         {
-            Config = menu.AddSubMenu(new Menu("Gank Tracker", "Gank Tracker"));
-            Config.AddItem(new MenuItem("Enabled", "Enabled").SetValue(true));
+            Config = menu.AddSubMenu(new Menu("Gank 提示器", "Gank Tracker"));
+            Config.AddItem(new MenuItem("Enabled", "开启").SetValue(true));
         }
 
         private static void GameOnOnGameUpdate(EventArgs args)
