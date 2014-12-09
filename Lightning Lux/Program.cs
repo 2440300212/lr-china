@@ -46,63 +46,63 @@ namespace LightningLux
 			
 			IgniteSlot = Player.GetSpellSlot("SummonerDot");
 			
-			Config = new Menu("Lightning Lux", "Lightning Lux", true);
-			var targetSelectorMenu = new Menu("Target Selector", "Target Selector");
+			Config = new Menu("光辉女郎-拉克丝", "Lightning Lux", true);
+			var targetSelectorMenu = new Menu("目标选择器", "Target Selector");
 			SimpleTs.AddToMenu(targetSelectorMenu);
 			Config.AddSubMenu(targetSelectorMenu);
 			
-			Config.AddSubMenu(new Menu("Orbwalker", "Orbwalker"));
+			Config.AddSubMenu(new Menu("走砍选项", "Orbwalker"));
 			var orbwalker = new Orbwalking.Orbwalker(Config.SubMenu("Orbwalker"));
 			
-			Config.AddSubMenu(new Menu("Combo", "Combo"));
-			Config.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseQ", "Use Q").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseW", "Use W").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseE", "Use E").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseR", "Use R if Killable").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseItems", "Use Items").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseIgnite", "Use Ignite").SetValue(true));
+			Config.AddSubMenu(new Menu("连招选项", "Combo"));
+			Config.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "连招!").SetValue(new KeyBind(32, KeyBindType.Press)));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseQ", "使用 Q").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseW", "使用 W").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseE", "使用 E").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseR", "使用R击杀").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseItems", "使用道具").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseIgnite", "使用点燃").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Harass", "Harass"));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HarassActive", "Harass!").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HQ", "Use Q").SetValue(true));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HE", "Use E").SetValue(true));
+			Config.AddSubMenu(new Menu("骚扰选项", "Harass"));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HarassActive", "骚扰!").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HQ", "使用 Q").SetValue(true));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HE", "使用 E").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Farm", "Farm"));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FarmActive", "Farm!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Farm").AddItem(new MenuItem("JungSteal", "JungSteal!").SetValue(new KeyBind("J".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FQ", "Use Q").SetValue(true));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FW", "Use W").SetValue(true));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FE", "Use E").SetValue(true));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FMP", "My MP %").SetValue(new Slider(15,100,0)));
+			Config.AddSubMenu(new Menu("补兵选项", "Farm"));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FarmActive", "补兵!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Farm").AddItem(new MenuItem("JungSteal", "打野!").SetValue(new KeyBind("J".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FQ", "使用 Q").SetValue(true));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FW", "使用 W").SetValue(true));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FE", "使用 E").SetValue(true));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FMP", "补兵蓝量 %").SetValue(new Slider(15,100,0)));
 			
-			Config.AddSubMenu(new Menu("KillSteal", "KillSteal"));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseQ", "Use Q").SetValue(true));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseE", "Use E").SetValue(true));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseR", "Use R").SetValue(true));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("KIgnite", "Use Ignite").SetValue(true));
+			Config.AddSubMenu(new Menu("抢人头选项", "KillSteal"));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseQ", "使用 Q").SetValue(true));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseE", "使用 E").SetValue(true));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("KUseR", "使用 R").SetValue(true));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("KIgnite", "使用点燃").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("AutoShield", "AutoShield"));
-			Config.SubMenu("AutoShield").AddItem(new MenuItem("WAllies", "Auto W for Allies").SetValue(true));
-			Config.SubMenu("AutoShield").AddItem(new MenuItem("AutoW", "Auto W when Lux is targeted").SetValue(true));
-			Config.SubMenu("AutoShield").AddItem(new MenuItem("HP", "Allies HP %").SetValue(new Slider(60,100,0)));
-			Config.SubMenu("AutoShield").AddItem(new MenuItem("MP", "My MP %").SetValue(new Slider(30,100,0)));
+			Config.AddSubMenu(new Menu("自动护盾", "AutoShield"));
+			Config.SubMenu("AutoShield").AddItem(new MenuItem("WAllies", "自动W己方").SetValue(true));
+			Config.SubMenu("AutoShield").AddItem(new MenuItem("AutoW", "被攻击自动W").SetValue(true));
+			Config.SubMenu("AutoShield").AddItem(new MenuItem("HP", "护盾己方生命 %").SetValue(new Slider(60,100,0)));
+			Config.SubMenu("AutoShield").AddItem(new MenuItem("MP", "使用护盾MP %").SetValue(new Slider(30,100,0)));
 			
-			Config.AddSubMenu(new Menu("ExtraSettings", "ExtraSettings"));
-			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UseQE", "Only E if Target trapped").SetValue(false));
-			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("AutoE2", "Auto pop E").SetValue(true));
-			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UseQGap", "Q on GapCloser").SetValue(true));
-			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("HitChance", "HitChance").SetValue(new StringList(new[] {"Low","Medium","High","Very High"},2)));
-			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UsePacket", "Use Packet Cast").SetValue(true));
+			Config.AddSubMenu(new Menu("额外选项", "ExtraSettings"));
+			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UseQE", "目标困住只使用E").SetValue(false));
+			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("AutoE2", "自动E").SetValue(true));
+			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UseQGap", "敌方近身自动Q").SetValue(true));
+			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("HitChance", "命中率").SetValue(new StringList(new[] {"低","中","高","很高"},2)));
+			Config.SubMenu("ExtraSettings").AddItem(new MenuItem("UsePacket", "使用封包技能").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("UltSettings", "UltSettings"));
-			Config.SubMenu("UltSettings").AddItem(new MenuItem("RHit", "Auto R if hit").SetValue(new StringList(new[] {"None","2 Target","3 Target","4 Target","5 Target"},1)));
-			Config.SubMenu("UltSettings").AddItem(new MenuItem("RTrap", "Auto R if trapped").SetValue(false));
+			Config.AddSubMenu(new Menu("大招选项", "UltSettings"));
+			Config.SubMenu("UltSettings").AddItem(new MenuItem("RHit", "自动大招敌人数").SetValue(new StringList(new[] {"绝不","2目标","3目标","4目标","5目标"},1)));
+			Config.SubMenu("UltSettings").AddItem(new MenuItem("RTrap", "困住自动R").SetValue(false));
 			
-			Config.AddSubMenu(new Menu("Drawings", "Drawings"));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q range").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("WRange", "W range").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("ERange", "E range").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
+			Config.AddSubMenu(new Menu("显示选项", "Drawings"));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q 范围").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("WRange", "W 范围").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("ERange", "E 范围").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
 			Config.AddToMainMenu();
 			
 			Game.PrintChat("Lightning Lux loaded!");

@@ -30,18 +30,18 @@ namespace CardSelector
 			
 			LastPingT = 0;
           			
-			Config = new Menu("Card Selector", "Card Selector", true);
+			Config = new Menu("卡牌大师-选牌助手", "Card Selector", true);
 			
-			Config.AddSubMenu(new Menu("Card Selector", "CardSelector"));
-			Config.SubMenu("CardSelector").AddItem(new MenuItem("Yellow", "Yellow!").SetValue(new KeyBind("W".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("CardSelector").AddItem(new MenuItem("Blue", "Blue!").SetValue(new KeyBind("E".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("CardSelector").AddItem(new MenuItem("Red", "Red!").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("CardSelector").AddItem(new MenuItem("Ping", "Ping low health enemies").SetValue(true));
+			Config.AddSubMenu(new Menu("选牌设置", "CardSelector"));
+			Config.SubMenu("CardSelector").AddItem(new MenuItem("Yellow", "黄牌!").SetValue(new KeyBind("W".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("CardSelector").AddItem(new MenuItem("Blue", "蓝牌!").SetValue(new KeyBind("E".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("CardSelector").AddItem(new MenuItem("Red", "红牌!").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("CardSelector").AddItem(new MenuItem("Ping", "击杀提醒").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Drawings", "Drawings"));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q range").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("WRange", "W range").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("RRange", "R range").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));				
+			Config.AddSubMenu(new Menu("显示选项", "Drawings"));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q 范围").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("WRange", "W 范围").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("RRange", "R 范围").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));				
 			Config.AddToMainMenu();       
 			
 			Game.PrintChat("Card Selector loaded!");

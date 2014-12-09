@@ -62,68 +62,68 @@ namespace LX_Orbwalker
 
 			Menu = menu;
 
-			var menuDrawing = new Menu("Drawing", "lxOrbwalker_Draw");
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_AARange", "AA Circle").SetValue(new Circle(true, Color.FloralWhite)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_AARange_Enemy", "AA Circle Enemy").SetValue(new Circle(true, Color.Pink)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_Holdzone", "Holdzone").SetValue(new Circle(true, Color.FloralWhite)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_MinionHPBar", "Minion HPBar").SetValue(new Circle(true, Color.Black)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_MinionHPBar_thickness", "^ HPBar Thickness").SetValue(new Slider(1, 1, 3)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_hitbox", "Show HitBoxes").SetValue(new Circle(true, Color.FloralWhite)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_Lasthit", "Minion Lasthit").SetValue(new Circle(true, Color.Lime)));
-			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_nearKill", "Minion nearKill").SetValue(new Circle(true, Color.Gold)));
+			var menuDrawing = new Menu("显示选项", "lxOrbwalker_Draw");
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_AARange", "AA 范围").SetValue(new Circle(true, Color.FloralWhite)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_AARange_Enemy", "敌方AA范围").SetValue(new Circle(true, Color.Pink)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_Holdzone", "保持距离").SetValue(new Circle(true, Color.FloralWhite)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_MinionHPBar", "血条显示").SetValue(new Circle(true, Color.Black)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_MinionHPBar_thickness", "血条显示厚度").SetValue(new Slider(1, 1, 3)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_hitbox", "显示连击盒子").SetValue(new Circle(true, Color.FloralWhite)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_Lasthit", "小兵尾刀").SetValue(new Circle(true, Color.Lime)));
+			menuDrawing.AddItem(new MenuItem("lxOrbwalker_Draw_nearKill", "小兵临近击杀").SetValue(new Circle(true, Color.Gold)));
 			menu.AddSubMenu(menuDrawing);
 
-			var menuMisc = new Menu("Misc", "lxOrbwalker_Misc");
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Holdzone", "Hold Position").SetValue(new Slider(50, 100, 0)));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Farmdelay", "Farm Delay").SetValue(new Slider(0, 200, 0)));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_ExtraWindUp", "Extra Winduptime").SetValue(new Slider(80, 200, 0)));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AutoWindUp", "Autoset Windup").SetValue(false));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Priority_Unit", "Priority Unit").SetValue(new StringList(new[] { "Minion", "Hero" })));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Humanizer", "Humanizer Delay").SetValue(new Slider(50, 100, 0)));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AllMovementDisabled", "Disable All Movement").SetValue(false));
-			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AllAttackDisabled", "Disable All Attacks").SetValue(false));
+			var menuMisc = new Menu("其他选项", "lxOrbwalker_Misc");
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Holdzone", "保持距离位置").SetValue(new Slider(50, 100, 0)));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Farmdelay", "补兵延迟").SetValue(new Slider(0, 200, 0)));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_ExtraWindUp", "额外结束时间").SetValue(new Slider(80, 200, 0)));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AutoWindUp", "自动设置").SetValue(false));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Priority_Unit", "优先单位").SetValue(new StringList(new[] { "小兵", "英雄" })));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_Humanizer", "Humanizer 延迟").SetValue(new Slider(50, 100, 0)));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AllMovementDisabled", "关闭走动").SetValue(false));
+			menuMisc.AddItem(new MenuItem("lxOrbwalker_Misc_AllAttackDisabled", "关闭攻击").SetValue(false));
 			
 			menu.AddSubMenu(menuMisc);
 
-			var menuMelee = new Menu("Melee", "lxOrbwalker_Melee");
-			menuMelee.AddItem(new MenuItem("lxOrbwalker_Melee_Prediction", "Movement Prediction").SetValue(false));
+			var menuMelee = new Menu("控线", "lxOrbwalker_Melee");
+			menuMelee.AddItem(new MenuItem("lxOrbwalker_Melee_Prediction", "走位预测").SetValue(false));
 			menu.AddSubMenu(menuMelee);
 
-			var menuModes = new Menu("Orbwalk Mode", "lxOrbwalker_Modes");
+			var menuModes = new Menu("走砍模式", "lxOrbwalker_Modes");
 			{
-				var modeCombo = new Menu("Combo", "lxOrbwalker_Modes_Combo");
-				modeCombo.AddItem(new MenuItem("Combo_Key", "Key").SetValue(new KeyBind(32, KeyBindType.Press)));
-				modeCombo.AddItem(new MenuItem("Combo_move", "Movement").SetValue(true));
-				modeCombo.AddItem(new MenuItem("Combo_attack", "Attack").SetValue(true));			
+				var modeCombo = new Menu("连招", "lxOrbwalker_Modes_Combo");
+				modeCombo.AddItem(new MenuItem("Combo_Key", "快捷键").SetValue(new KeyBind(32, KeyBindType.Press)));
+				modeCombo.AddItem(new MenuItem("Combo_move", "边走").SetValue(true));
+				modeCombo.AddItem(new MenuItem("Combo_attack", "边攻击").SetValue(true));			
 				menuModes.AddSubMenu(modeCombo);
 
-				var modeHarass = new Menu("Harass", "lxOrbwalker_Modes_Harass");
-				modeHarass.AddItem(new MenuItem("Harass_Key", "Key").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));		
-				modeHarass.AddItem(new MenuItem("Harass_move", "Movement").SetValue(true));
-				modeHarass.AddItem(new MenuItem("Harass_attack", "Attack").SetValue(true));
-				modeHarass.AddItem(new MenuItem("Harass_Lasthit", "Lasthit Minions").SetValue(true));
+				var modeHarass = new Menu("骚扰", "lxOrbwalker_Modes_Harass");
+				modeHarass.AddItem(new MenuItem("Harass_Key", "快捷键").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));		
+				modeHarass.AddItem(new MenuItem("Harass_move", "边走").SetValue(true));
+				modeHarass.AddItem(new MenuItem("Harass_attack", "边攻击").SetValue(true));
+				modeHarass.AddItem(new MenuItem("Harass_Lasthit", "边尾刀").SetValue(true));
 				menuModes.AddSubMenu(modeHarass);
 
-				var modeLaneClear = new Menu("LaneClear", "lxOrbwalker_Modes_LaneClear");
-				modeLaneClear.AddItem(new MenuItem("LaneClear_Key", "Key").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
-				modeLaneClear.AddItem(new MenuItem("LaneClear_move", "Movement").SetValue(true));
-				modeLaneClear.AddItem(new MenuItem("LaneClear_attack", "Attack").SetValue(true));
+				var modeLaneClear = new Menu("清线选项", "lxOrbwalker_Modes_LaneClear");
+				modeLaneClear.AddItem(new MenuItem("LaneClear_Key", "快捷键").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+				modeLaneClear.AddItem(new MenuItem("LaneClear_move", "边走").SetValue(true));
+				modeLaneClear.AddItem(new MenuItem("LaneClear_attack", "边攻击").SetValue(true));
 				menuModes.AddSubMenu(modeLaneClear);
 			
-				var modeLaneFreeze = new Menu("LaneFreeze", "lxOrbwalker_Modes_LaneFreeze");
-				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_Key", "Key").SetValue(new KeyBind("Z".ToCharArray()[0], KeyBindType.Press)));		
-				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_move", "Movement").SetValue(true));
-				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_attack", "Attack").SetValue(true));
+				var modeLaneFreeze = new Menu("控线", "lxOrbwalker_Modes_LaneFreeze");
+				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_Key", "快捷键").SetValue(new KeyBind("Z".ToCharArray()[0], KeyBindType.Press)));		
+				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_move", "边走").SetValue(true));
+				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_attack", "边攻击").SetValue(true));
 				menuModes.AddSubMenu(modeLaneFreeze);
 
-				var modeLasthit = new Menu("LastHit", "lxOrbwalker_Modes_LastHit");
-				modeLasthit.AddItem(new MenuItem("LastHit_Key", "Key").SetValue(new KeyBind("X".ToCharArray()[0], KeyBindType.Press)));		
-				modeLasthit.AddItem(new MenuItem("LastHit_move", "Movement").SetValue(true));
-				modeLasthit.AddItem(new MenuItem("LastHit_attack", "Attack").SetValue(true));
+				var modeLasthit = new Menu("尾刀", "lxOrbwalker_Modes_LastHit");
+				modeLasthit.AddItem(new MenuItem("LastHit_Key", "快捷键").SetValue(new KeyBind("X".ToCharArray()[0], KeyBindType.Press)));		
+				modeLasthit.AddItem(new MenuItem("LastHit_move", "边走").SetValue(true));
+				modeLasthit.AddItem(new MenuItem("LastHit_attack", "边攻击").SetValue(true));
 				menuModes.AddSubMenu(modeLasthit);
 
-				var modeFlee = new Menu("Flee", "lxOrbwalker_Modes_Flee");
-				modeFlee.AddItem(new MenuItem("Flee_Key", "Key").SetValue(new KeyBind("A".ToCharArray()[0], KeyBindType.Press)));
+				var modeFlee = new Menu("逃跑", "lxOrbwalker_Modes_Flee");
+				modeFlee.AddItem(new MenuItem("Flee_Key", "快捷键").SetValue(new KeyBind("A".ToCharArray()[0], KeyBindType.Press)));
 				menuModes.AddSubMenu(modeFlee);
 			}
 			menu.AddSubMenu(menuModes);

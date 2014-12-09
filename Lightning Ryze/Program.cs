@@ -40,52 +40,52 @@ namespace LightningRyze
 			R = new Spell(SpellSlot.R);
 			IgniteSlot = Player.GetSpellSlot("SummonerDot");
 			
-			Config = new Menu("Lightning Ryze", "Lightning Ryze", true);
-			var targetSelectorMenu = new Menu("Target Selector", "Target Selector");
+			Config = new Menu("流浪法师-瑞兹", "Lightning Ryze", true);
+			var targetSelectorMenu = new Menu("目标选择器", "Target Selector");
 			SimpleTs.AddToMenu(targetSelectorMenu);
 			Config.AddSubMenu(targetSelectorMenu);
 			
-			Config.AddSubMenu(new Menu("Orbwalker", "Orbwalker"));
+			Config.AddSubMenu(new Menu("走砍选项", "Orbwalker"));
 			var orbwalker = new Orbwalking.Orbwalker(Config.SubMenu("Orbwalker"));
 			
-			Config.AddSubMenu(new Menu("Combo", "Combo"));
-			Config.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
-			Config.SubMenu("Combo").AddItem(new MenuItem("TypeCombo", "").SetValue(new StringList(new[] {"Mixed mode","Burst combo","Long combo"},0)));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseR", "Use R").SetValue(true));
-			Config.SubMenu("Combo").AddItem(new MenuItem("UseIgnite", "Use Ignite").SetValue(true));
+			Config.AddSubMenu(new Menu("连招选项", "Combo"));
+			Config.SubMenu("Combo").AddItem(new MenuItem("ComboActive", "连招!").SetValue(new KeyBind(32, KeyBindType.Press)));
+			Config.SubMenu("Combo").AddItem(new MenuItem("TypeCombo", "").SetValue(new StringList(new[] {"混合输出","爆发伤害","完整伤害"},0)));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseR", "使用 R").SetValue(true));
+			Config.SubMenu("Combo").AddItem(new MenuItem("UseIgnite", "使用点燃").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Harass", "Harass"));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HarassActive", "Harass!").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HQ", "Use Q").SetValue(true));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HW", "Use W").SetValue(true));
-			Config.SubMenu("Harass").AddItem(new MenuItem("HE", "Use E").SetValue(true));
+			Config.AddSubMenu(new Menu("骚扰选项", "Harass"));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HarassActive", "骚扰!").SetValue(new KeyBind("C".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HQ", "使用 Q").SetValue(true));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HW", "使用 W").SetValue(true));
+			Config.SubMenu("Harass").AddItem(new MenuItem("HE", "使用 E").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Farm", "Farm"));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FreezeActive", "Freeze!").SetValue(new KeyBind("X".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Farm").AddItem(new MenuItem("LaneClearActive", "LaneClear!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FQ", "Use Q").SetValue(true));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FW", "Use W").SetValue(true));
-			Config.SubMenu("Farm").AddItem(new MenuItem("FE", "Use E").SetValue(true));
+			Config.AddSubMenu(new Menu("补兵选项", "Farm"));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FreezeActive", "控线!").SetValue(new KeyBind("X".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Farm").AddItem(new MenuItem("LaneClearActive", "清线!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FQ", "使用 Q").SetValue(true));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FW", "使用 W").SetValue(true));
+			Config.SubMenu("Farm").AddItem(new MenuItem("FE", "使用 E").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("JungleFarm", "JungleFarm"));
-			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JungActive", "Farm!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
-			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JQ", "Use Q").SetValue(true));
-			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JW", "Use W").SetValue(true));
-			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JE", "Use E").SetValue(true));
+			Config.AddSubMenu(new Menu("打野选项", "JungleFarm"));
+			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JungActive", "打野!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
+			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JQ", "使用 Q").SetValue(true));
+			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JW", "使用 W").SetValue(true));
+			Config.SubMenu("JungleFarm").AddItem(new MenuItem("JE", "使用 E").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("KillSteal", "KillSteal"));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("KillSteal", "Use Kill Steal").SetValue(true));
-			Config.SubMenu("KillSteal").AddItem(new MenuItem("AutoIgnite", "Use Ignite").SetValue(true));
+			Config.AddSubMenu(new Menu("抢人头", "KillSteal"));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("KillSteal", "开启抢人头").SetValue(true));
+			Config.SubMenu("KillSteal").AddItem(new MenuItem("AutoIgnite", "使用点燃").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Extra", "Extra"));
-			Config.SubMenu("Extra").AddItem(new MenuItem("UseSera", "Use Seraphs Embrace").SetValue(true));
-			Config.SubMenu("Extra").AddItem(new MenuItem("HP", "When % HP").SetValue(new Slider(20,100,0)));
-			Config.SubMenu("Extra").AddItem(new MenuItem("UseWGap", "Use W GapCloser").SetValue(true));
-			Config.SubMenu("Extra").AddItem(new MenuItem("UsePacket", "Use Packet Cast").SetValue(true));
+			Config.AddSubMenu(new Menu("额外选项", "Extra"));
+			Config.SubMenu("Extra").AddItem(new MenuItem("UseSera", "使用炽天使之拥").SetValue(true));
+			Config.SubMenu("Extra").AddItem(new MenuItem("HP", "使用HP%").SetValue(new Slider(20,100,0)));
+			Config.SubMenu("Extra").AddItem(new MenuItem("UseWGap", "敌方近身W").SetValue(true));
+			Config.SubMenu("Extra").AddItem(new MenuItem("UsePacket", "使用封包技能").SetValue(true));
 			
-			Config.AddSubMenu(new Menu("Drawings", "Drawings"));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q range").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
-			Config.SubMenu("Drawings").AddItem(new MenuItem("WERange", "W+E range").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
+			Config.AddSubMenu(new Menu("显示选项", "Drawings"));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("QRange", "Q 范围").SetValue(new Circle(true, Color.FromArgb(255, 255, 255, 255))));
+			Config.SubMenu("Drawings").AddItem(new MenuItem("WERange", "W+E 范围").SetValue(new Circle(false, Color.FromArgb(255, 255, 255, 255))));
 			Config.AddToMainMenu();
 			
 			Game.PrintChat("Lightning Ryze loaded!");
