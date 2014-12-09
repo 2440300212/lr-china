@@ -1,0 +1,12 @@
+C:\Users\Harold\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LightningRyze.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LightningRyze.exe.config
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\obj\Debug\TwilightRyze.csprojResolveAssemblyReference.cache
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LightningRyze.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LightningRyze.pdb
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LeagueSharp.Common.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LeagueSharp.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\SharpDX.dll
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\bin\Debug\LeagueSharp.xml
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\obj\Debug\LightningRyze.exe
+C:\Users\Twilight\Documents\GitHub\LeagueSharp\TwilightRyze\obj\Debug\LightningRyze.pdb
